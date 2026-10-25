@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://iwro1uolfiva"]
+
+[ext_resource type="Script" uid="uid://b226pavsfj7ar" path="res://code/character_body_2d.gd" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://c3kv37ms65eac" path="res://art/Bean_4.png" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://mnus3geken53" path="res://art/image (25).png" id="3_dqkch"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dwf1e"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7qj28"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2eote"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qhqgy")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dqkch")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}]
+
+[node name="player" type="CharacterBody2D" unique_id=151764696]
+modulate = Color(0.9699662, 0.9699662, 0.9699662, 1)
+script = ExtResource("1_0e48y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=667132001]
+shape = SubResource("CapsuleShape2D_dwf1e")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=448805608]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2102299983]
+shape = SubResource("CapsuleShape2D_7qj28")
+
+[node name="Coyote_Time" type="Timer" parent="." unique_id=903918320]
+wait_time = 0.1
+one_shot = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=457976211]
+position = Vector2(0, -3)
+sprite_frames = SubResource("SpriteFrames_2eote")
+animation = &"right"
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

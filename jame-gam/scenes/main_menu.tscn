@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://qsfx4rlakrtn"]
+
+[ext_resource type="Script" uid="uid://dquio3c7addgo" path="res://code/Main_Menu.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://ba2qnk1eoi54v" path="res://Untitled drawing (49).svg" id="3_bqqt6"]
+[ext_resource type="AudioStream" uid="uid://cdkx6bc6gtbly" path="res://art/atlasaudio-calm-610028.mp3" id="3_wu84c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekxnf"]
+bg_color = Color(0.26, 0.26, 0.26, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqqt6"]
+bg_color = Color(0.12, 0.0888, 0.0888, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
+bg_color = Color(0.37, 0.37, 0.37, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_size = 2
+
+[node name="Main Menu" type="Node2D" unique_id=1433983449]
+script = ExtResource("1_l6cm7")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1614177565]
+modulate = Color(0.21, 0, 0, 1)
+offset_left = -7.0
+offset_top = -5.0
+offset_right = 1161.0
+offset_bottom = 655.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Button Manager" type="Control" parent="." unique_id=2106381546]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Button Manager" unique_id=1397575480]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 435.0
+offset_right = 717.0
+offset_bottom = 516.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wu84c")
+text = "Start Game"
+metadata/_edit_use_anchors_ = true
+
+[node name="UntitledDrawing(49)" type="Sprite2D" parent="." unique_id=690537581]
+modulate = Color(0.523, 1, 0.47000003, 1)
+position = Vector2(1179, 1807)
+scale = Vector2(0.90298784, 0.9029878)
+texture = ExtResource("3_bqqt6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=15019974]
+stream = ExtResource("3_wu84c")
+autoplay = true
+
+[connection signal="button_down" from="Button Manager/Button" to="." method="_on_button_button_down"]

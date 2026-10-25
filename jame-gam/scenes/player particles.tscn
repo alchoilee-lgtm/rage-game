@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bc8pv8hpdu18c"]
+
+[ext_resource type="Script" uid="uid://cretqi1dxyhny" path="res://code/player_particles.gd" id="1_fl4si"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2eote"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 20.0
+initial_velocity_min = 208.39
+initial_velocity_max = 385.31
+angular_velocity_min = -188.31001
+angular_velocity_max = 66.459984
+gravity = Vector3(0, 1000, 0)
+scale_min = 2.0
+scale_max = 7.0
+color = Color(0.8101117, 0.97, 0.7469, 1)
+
+[node name="Player" type="GPUParticles2D" unique_id=539770766]
+emitting = false
+amount = 4
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_2eote")
+script = ExtResource("1_fl4si")
