@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b4xj4hr7iosi6"]
+
+[ext_resource type="Texture2D" uid="uid://cxh0jqw3tiqvb" path="res://art/costume1 (5).svg" id="1_p78a6"]
+
+[node name="Win Scene" type="Node2D" unique_id=186956412]
+
+[node name="Costume1(5)" type="Sprite2D" parent="." unique_id=1056134306]
+position = Vector2(565, 303)
+scale = Vector2(0.20448972, 0.2044897)
+texture = ExtResource("1_p78a6")
